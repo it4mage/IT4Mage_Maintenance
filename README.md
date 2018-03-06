@@ -1,20 +1,15 @@
-Webgriffe_Maintenance
-=====================
+# IT4Mage_Maintenance
 
-A maintentance module for Magento 
+A maintentance module for Magento 1.x 
 
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+## Features
+- enable custom message or CMS page on frontend as maintenance page
+- debug ip for frontend access
+- whitelist ip for frontend access when extension maintenance mode is on (not magento maintenance mode)
+- basic Authentication for your store (no more config server-side)
 
-Installation
-------------
-Supposed you know what [modman](https://github.com/colinmollenhour/modman) is, you can simply install this module using the following commands:
+## Configuration
+To enable the extension just go to `System > Configurtion > Advanced > System > Maintenance Page`
 
-```
-modman init
-modman clone git@github.com:aleron75/Webgriffe_Maintenance.git
-```
-
-Once installed, clean your Magento cache and compilation (if active) and go to System > Configuration > Advanced > System > Maintenance Page.
-
-That's all for now.
- 
+### Credits
+Thanks to [Alessandro Ronchi](https://github.com/aleron75) for the base extension.
