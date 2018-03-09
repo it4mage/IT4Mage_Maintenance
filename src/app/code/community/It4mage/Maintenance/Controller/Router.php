@@ -1,6 +1,6 @@
 <?php
 
-class Webgriffe_Maintenance_Controller_Router extends Mage_Core_Controller_Varien_Router_Abstract {
+class It4mage_Maintenance_Controller_Router extends Mage_Core_Controller_Varien_Router_Abstract {
 
     /**
      * Initialize Controller Router
@@ -14,7 +14,7 @@ class Webgriffe_Maintenance_Controller_Router extends Mage_Core_Controller_Varie
     }
 
     public function match(Zend_Controller_Request_Http $request) {
-        $helper = Mage::helper('wgmnt');
+        $helper = Mage::helper('it4magemnt');
         if ($helper->isActive() && !$helper->bypassIp()) {
             $adminFrontName = (string) Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName');
             $str_pos = strpos($request->getPathInfo(), $adminFrontName);
@@ -24,11 +24,11 @@ class Webgriffe_Maintenance_Controller_Router extends Mage_Core_Controller_Varie
 
             $requestParams = array();
 
-            $show = Mage::helper('wgmnt')->getShowMode();
+            $show = Mage::helper('it4magemnt')->getShowMode();
 
             switch ($show) {
 
-                case Webgriffe_Maintenance_Model_System_Config_Source_Show::MODE_CMS:
+                case It4mage_Maintenance_Model_System_Config_Source_Show::MODE_CMS:
                     $moduleName = 'cms';
                     $controllerName = 'page';
                     $actionName = 'view';
@@ -36,8 +36,8 @@ class Webgriffe_Maintenance_Controller_Router extends Mage_Core_Controller_Varie
                     $requestParams['page_id'] = $pageId;
                     break;
 
-                case Webgriffe_Maintenance_Model_System_Config_Source_Show::MODE_MSG:
-                    $moduleName = 'wgmnt';
+                case It4mage_Maintenance_Model_System_Config_Source_Show::MODE_MSG:
+                    $moduleName = 'it4magemnt';
                     $controllerName = 'index';
                     $actionName = 'index';
                     break;

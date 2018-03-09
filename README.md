@@ -1,4 +1,4 @@
-# IT4Mage_Maintenance
+# It4mage_Maintenance
 
 A maintentance module for Magento 1.x 
 

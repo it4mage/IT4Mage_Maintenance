@@ -1,8 +1,8 @@
 <?php
-class Webgriffe_Maintenance_Helper_Data extends Mage_Core_Helper_Data {
+class It4mage_Maintenance_Helper_Data extends Mage_Core_Helper_Data {
 
     protected function _log($msg) {
-        Mage::log($msg, null, 'Webgriffe_Maintenance.log', Mage::getStoreConfig('system/wg_maintenance/debug'));
+        Mage::log($msg, null, 'It4mage_Maintenance.log', Mage::getStoreConfig('system/it4mage_maintenance/debug'));
     }
 
     protected function _getCurrentIp() {
@@ -10,11 +10,11 @@ class Webgriffe_Maintenance_Helper_Data extends Mage_Core_Helper_Data {
     }
 
     public function isActive() {
-        return Mage::getStoreConfig('system/wg_maintenance/active');
+        return Mage::getStoreConfig('system/it4mage_maintenance/active');
     }
 
     public function bypassIp() {
-        $bypassedIps = explode(',', Mage::getStoreConfig('system/wg_maintenance/bypassed_ips'));
+        $bypassedIps = explode(',', Mage::getStoreConfig('system/it4mage_maintenance/bypassed_ips'));
 
         if ($bypassedIps && !empty($bypassedIps)) {
             for ($i = 0, $count = count($bypassedIps); $i < $count; $i ++) {
@@ -38,29 +38,29 @@ class Webgriffe_Maintenance_Helper_Data extends Mage_Core_Helper_Data {
     }
 
     public function getMaintenancePageId() {
-        return Mage::getStoreConfig('system/wg_maintenance/cms_page');
+        return Mage::getStoreConfig('system/it4mage_maintenance/cms_page');
     }
 
     public function getCustomMessage() {
-        return Mage::getStoreConfig('system/wg_maintenance/msg');
+        return Mage::getStoreConfig('system/it4mage_maintenance/msg');
     }
 
     public function getShowMode() {
-        return Mage::getStoreConfig('system/wg_maintenance/show');
+        return Mage::getStoreConfig('system/it4mage_maintenance/show');
     }
 
     public function isBasicAuthActive()
     {
-        return Mage::getStoreConfig('system/wg_basicauth/active');
+        return Mage::getStoreConfig('system/it4mage_basicauth/active');
     }
 
     public function getBasicAuthUsername()
     {
-        return Mage::getStoreConfig('system/wg_basicauth/username');
+        return Mage::getStoreConfig('system/it4mage_basicauth/username');
     }
 
     public function getBasicAuthPassword()
     {
-        return Mage::getStoreConfig('system/wg_basicauth/password');
+        return Mage::getStoreConfig('system/it4mage_basicauth/password');
     }
 }

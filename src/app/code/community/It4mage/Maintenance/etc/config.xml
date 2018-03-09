@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <Webgriffe_Maintenance>
+        <It4mage_Maintenance>
             <version>1.0.0</version>
-        </Webgriffe_Maintenance>
+        </It4mage_Maintenance>
     </modules>
     
     <global>
         <models>
-            <wgmnt>
-                <class>Webgriffe_Maintenance_Model</class>
-            </wgmnt>
+            <it4magemnt>
+                <class>It4mage_Maintenance_Model</class>
+            </it4magemnt>
         </models>
 
         <helpers>
-            <wgmnt>
-                <class>Webgriffe_Maintenance_Helper</class>
-            </wgmnt>
+            <it4magemnt>
+                <class>It4mage_Maintenance_Helper</class>
+            </it4magemnt>
         </helpers>
         
         <events>
             <controller_front_init_before>
                 <observers>
-                    <wgmnt_front_init_before>
+                    <it4magemnt_front_init_before>
                         <type>singleton</type>
-                        <class>Webgriffe_Maintenance_Controller_Router</class>
+                        <class>It4mage_Maintenance_Controller_Router</class>
                         <method>initControllerRouters</method>
-                    </wgmnt_front_init_before>
+                    </it4magemnt_front_init_before>
                 </observers>
             </controller_front_init_before>
         </events>
@@ -34,24 +34,24 @@
     
     <frontend>
         <routers>
-            <wgmnt>
+            <it4magemnt>
                 <use>standard</use>
                 <args>
-                    <module>Webgriffe_Maintenance</module>
-                    <frontName>wgmnt</frontName>
+                    <module>It4mage_Maintenance</module>
+                    <frontName>it4magemnt</frontName>
                 </args>
-            </wgmnt>
+            </it4magemnt>
         </routers>
     </frontend>
     
     <default>
         <system>
-            <wg_maintenance>
+            <it4mage_maintenance>
                 <active>0</active>
                 <show>msg</show>
                 <msg>Under maintenance</msg>
                 <debug>1</debug>
-            </wg_maintenance>
+            </it4mage_maintenance>
         </system>
     </default>
 </config>
